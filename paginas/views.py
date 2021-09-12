@@ -1,13 +1,14 @@
-from typing import ClassVar
 from django.views.generic import TemplateView
 
-
-
+# Create your views here.
 class IndexView(TemplateView):
     template_name = 'paginas/index.html'
 
-class PerfilProfessorView(TemplateView):
-    template_name = 'paginas/perfilprofessor.html'
+class UploadView(TemplateView):
+    template_name = 'paginas/upload.html'
 
-class CadastroView(TemplateView):
-    template_name = 'paginas/cadastro.html'
+class ScriptView(TemplateView):
+    template_name = 'paginas/script.html'
+
+class TesteView(TemplateView):
+    template_name = 'paginas/teste.html'

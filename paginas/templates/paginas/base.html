@@ -40,7 +40,7 @@
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="#">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{% url 'inicio' %}">
                 <div class="sidebar-brand-icon rotate-n-15">
                     <i class="fas fa-laugh-wink"></i>
                 </div>
@@ -79,12 +79,13 @@
 
             <!-- Nav Item - Utilities Collapse Menu -->
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true"
-                    aria-controls="collapseUtilities">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
+                    aria-expanded="true" aria-controls="collapseUtilities">
                     <i class="fas fa-fw fa-wrench"></i>
                     <span>Função</span>
                 </a>
-                <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+                <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
+                    data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Selecione uma função:</h6>
                         <a class="collapse-item" href="#">função 1</a>
@@ -95,7 +96,7 @@
                     </div>
                 </div>
             </li>
-           
+
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block my-0">
             <!-- Divider -->
@@ -129,25 +130,24 @@
                     </button>
 
                     <!-- Topbar Search -->
-                    <form
-                        class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 ">
-                        <div >
+                    <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 ">
+                        <div>
                             <h3 class="h3 mb-0 text-gray-800">Processamento Digital de Imagem</h3>
                         </div>
                     </form>
-    {% endblock %}
-    <!-- Topbar Navbar -->
-    <ul class="navbar-nav ml-auto">
-        
-        {% block contaprofessor %}
-        <div class="topbar-divider d-none d-sm-block"></div>
-        
-        
-        <!-- Nav Item - User Information -->
-        <li class="nav-item dropdown no-arrow">
+                    {% endblock %}
+                    <!-- Topbar Navbar -->
+                    <ul class="navbar-nav ml-auto">
+
+                        {% block contausuario %}
+                        <div class="topbar-divider d-none d-sm-block"></div>
+
+
+                        <!-- Nav Item - User Information -->
+                        <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Olá, Professor Fulano</span>
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Olá, Fulano</span>
                                 <img class="img-profile rounded-circle" src="{% static 'img/undraw_profile.svg' %}">
                             </a>
                             <!-- Dropdown - User Information -->
@@ -172,7 +172,7 @@
                                 </a>
                             </div>
                         </li>
-                        
+
                     </ul>
                     {% endblock %}
 
@@ -194,11 +194,11 @@
                     </div>
 
                     {% endblock %}
-                    
+
                     <!-- Content Row -->
                     <div class="row">
 
-                          
+
                     </div>
 
                     <!-- Content Row -->
@@ -230,8 +230,8 @@
                                 <div class="card-body">
                                     <div class="chart-area">
                                         <div>
-                                            
-                                        </div>                                        
+
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -314,85 +314,87 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            
+
                                         </div>
                                     </div>
-                                    
+
+                                </div>
                             </div>
                         </div>
-                    </div>
 
-                    <!-- Content Row -->
-                    <div class="row">
+                        <!-- Content Row -->
+                        <div class="row">
 
-                       
-                        
+
+
+                        </div>
+
                     </div>
+                    <!-- /.container-fluid -->
 
                 </div>
-                <!-- /.container-fluid -->
+                <!-- End of Main Content -->
+
+                <!-- Footer -->
+                <footer class="sticky-footer bg-white">
+                    <div class="container my-auto">
+                        <div class="copyright text-center my-auto">
+                            <span>Copyright &copy; Cleber, Diego, Jéfer e Marcelo 2021</span>
+                        </div>
+                    </div>
+                </footer>
+                <!-- End of Footer -->
 
             </div>
-            <!-- End of Main Content -->
-                        
-            <!-- Footer -->
-            <footer class="sticky-footer bg-white">
-                <div class="container my-auto">
-                    <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; Cleber, Diego, Jéfer e Marcelo 2021</span>
-                    </div>
-                </div>
-            </footer>
-            <!-- End of Footer -->
-            
+            <!-- End of Content Wrapper -->
+
         </div>
-        <!-- End of Content Wrapper -->
+        <!-- End of Page Wrapper -->
 
-    </div>
-    <!-- End of Page Wrapper -->
+        <!-- Scroll to Top Button-->
+        <a class="scroll-to-top rounded" href="#page-top">
+            <i class="fas fa-angle-up"></i>
+        </a>
 
-    <!-- Scroll to Top Button-->
-    <a class="scroll-to-top rounded" href="#page-top">
-        <i class="fas fa-angle-up"></i>
-    </a>
-        
-    <!-- Logout Modal-->
-    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">×</span>
-                    </button>
-                </div>
-                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
-                <div class="modal-footer">
-                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="login.html">Logout</a>
+        <!-- Logout Modal-->
+        <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+                    <div class="modal-footer">
+                        <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                        <a class="btn btn-primary" href="login.html">Logout</a>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    {% endblock %}
+        {% endblock %}
 
-    <!-- Bootstrap core JavaScript-->
-    <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
-    <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+        <!-- Bootstrap core JavaScript-->
+        <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+        <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+        <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
 
-    <!-- Core plugin JavaScript-->
-    <script src="{% static 'vendor/jquery-easing/jquery.easing.min.js' %}"></script>
+        <!-- Core plugin JavaScript-->
+        <script src="{% static 'js/bootstrap.min.js' %}"></script>
 
-    <!-- Custom scripts for all pages-->
-    <script src="{% static 'js/sb-admin-2.min.js' %}"></script>
+        <!-- Custom scripts for all pages-->
+        <script src="{% static 'js/sb-admin-2.min.js' %}"></script>
+        <script src="{% static 'js/popper.js' %}"></script>
 
-    <!-- Page level plugins -->
-    <script src="{% static 'vendor/chart.js/Chart.min.js' %}"></script>
+        <!-- Page level plugins -->
+        <script src="{% static 'vendor/chart.js/Chart.min.js' %}"></script>
 
-    <!-- Page level custom scripts -->
-    <script src="{% static 'js/demo/chart-area-demo.js' %}"></script>
-    <script src="{% static 'js/demo/chart-pie-demo.js' %}"></script>
+        <!-- Page level custom scripts -->
+        <script src="{% static 'js/demo/chart-area-demo.js' %}"></script>
+        <script src="{% static 'js/demo/chart-pie-demo.js' %}"></script>
 
 </body>
 

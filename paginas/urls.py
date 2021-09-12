@@ -1,10 +1,10 @@
 from django.urls import path
 from django.urls.resolvers import URLPattern
-from django.urls import path
-from .views import IndexView, PerfilProfessorView, CadastroView
+from .views import IndexView, UploadView, ScriptView, TesteView
 
 urlpatterns = [
     path('', IndexView.as_view(), name='inicio'),
-    path('perfilprofessor/', PerfilProfessorView.as_view(), name='perfilprofessor'),
-    path('cadastro/', CadastroView.as_view(), name='cadastro'),
+    path('upload/', UploadView.as_view(), name='upload'),
+    path('script/', ScriptView.as_view(), name='script'),
+    path('teste/', TesteView.as_view(), name='teste'),    
 ]
