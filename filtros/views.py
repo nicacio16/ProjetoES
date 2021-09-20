@@ -12,4 +12,4 @@ class ScriptCreate(CreateView):
     model = Script
     fields = ['nome', 'codigo']
     template_name = 'filtros/script.html'
-    success_url = reverse_lazy('inicio')
+    success_url = reverse_lazy('upload')

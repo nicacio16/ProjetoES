@@ -1,0 +1,23 @@
+{% extends 'paginas/base.html' %}
+
+{% load static %}
+
+{% block titulo %}
+<title>SCRIPT</title>
+{% endblock %}
+
+{% block conteudo %}
+
+<div class="container-fluid">
+    <form action="" method="POST">
+
+        {% csrf_token %}
+        
+        {{ form.as_p }}
+
+        <button type="submit" class="btn btn-primary">Inserir</button>
+
+    </form>
+</div>
+
+{% endblock %}
