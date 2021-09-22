@@ -43,6 +43,8 @@ INSTALLED_APPS = [
     'testes.apps.TestesConfig',
 
     'crispy_forms',
+    'django_cleanup.apps.CleanupConfig',
+
 ]
 
 # Crispy Forms

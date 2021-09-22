@@ -5,18 +5,27 @@
 {% load crispy_forms_tags %}
 
 {% block titulo %}
-<title>Inserir Script</title>
+<title>Projeto ES - Mestrado</title>
 {% endblock %}
 
 {% block conteudo %}
 
 <div class="container-fluid">
+
+
+    <h4 class="text-dark border-bottom my-3">
+        {{ titulo }}
+    </h4>
+
+    <br>
+
     <form action="" method="POST">
 
         {% csrf_token %}
-        {{ form.as_p }}
+        
+        {{ form|crispy }}
 
-        <button type="submit" class="btn btn-primary">Inserir</button>
+        <button type="submit" class="btn btn-primary">{{ botao }}</button>
 
     </form>
 </div>

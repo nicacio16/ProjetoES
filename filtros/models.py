@@ -1,4 +1,5 @@
 from django.db import models
+from testes.models import Upload
 
 # Create your models here.
 
@@ -11,3 +12,10 @@ class Script(models.Model):
         return "{} ({})".format(self.nome, self.codigo)
 
     
+
+class Teste(models.Model):
+    imagem = models.ForeignKey(Upload, on_delete=models.CASCADE)
+    filtro = models.ForeignKey(Script, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return "{} - {}".format(self.filtro.nome, self.imagem.description)
