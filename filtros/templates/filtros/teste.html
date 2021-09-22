@@ -1,0 +1,45 @@
+{% extends 'paginas/base.html' %}
+
+{% load static %}
+
+{% load crispy_forms_tags %}
+
+{% block titulo %}
+<title>Projeto ES - Mestrado</title>
+{% endblock %}
+
+{% block conteudo %}
+
+<div class="container-fluid">
+
+
+    <h4 class="text-dark border-bottom my-3">
+        Visualização de Testes
+    </h4>
+
+    <br>
+    
+    <h5 class="">Imagem Original:</h5>
+    {{ object.imagem.image }}
+    <br>
+    <img src="{{ object.imagem.image }}" alt="">
+
+    <br>
+
+    <h5 class="mt-4">Script aplicado:</h5>
+    {{ object.filtro.codigo|escape }}
+
+    <hr>
+
+    <h5>Imagem resultante</h5>
+
+    {{ resultado }}
+
+    <hr>
+
+    <img src="{{ resultado_img }}" alt="">
+
+    
+</div>
+
+{% endblock %}
