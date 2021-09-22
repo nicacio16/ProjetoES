@@ -1,0 +1,169 @@
+{% extends 'paginas/base.html' %}
+
+{% load static %}
+
+{% load crispy_forms_tags %}
+
+{% block titulo %}
+<title>UPLOAD</title>
+{% endblock %}
+
+{% block conteudo %}
+
+<!-- 
+<div class="container-fluid">
+    <form action="" method="POST">
+        
+        {% csrf_token %}
+        {{ form.as_p }}
+        
+        <button type="submit" class="btn btn-primary">Upload</button>
+        
+    </form>
+</div> 
+-->
+
+<!-- Begin Page Content -->
+<div class="container-fluid">
+
+    <!-- Page Heading -->
+    {% block botaoadd %}
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+        <div class="custom-file">
+            <input type="file" class="custom-file-input" id="customFile">
+            <label class="custom-file-label" for="customFile">Escolher arquivo</label>
+        </div>
+    </div>
+
+    {% endblock %}
+
+    <!-- Content Row -->
+    <div class="row">
+
+
+    </div>
+
+    <!-- Content Row -->
+
+    <div class="row">
+
+        <!-- Area Chart -->
+        <div class="col-xl-6 col-lg-5">
+            <div class="card shadow mb-4">
+                <!-- Card Header - Dropdown -->
+                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                    <h6 class="m-0 font-weight-bold text-primary">Imagem Original</h6>
+
+                    <ul class="navbar-nav ml-auto">
+                        <div class="topbar-divider d-none d-sm-block"></div>
+                    </ul>
+                    <div class="dropdown no-arrow">
+                        <span class="mr-2 d-none d-lg-inline text-gray-900 small">Arquivo</span>
+                        <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                            <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-900"></i>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
+                            aria-labelledby="dropdownMenuLink">
+                            <a class="dropdown-item" href="#">Histograma</a>
+                            <a class="dropdown-item" href="#">Operações Lógicas</a>
+                            <a class="dropdown-item" href="#">Inverter Cores</a>
+                            <a class="dropdown-item" href="#">Equalizar</a>
+                            <a class="dropdown-item" href="#">Normalizar</a>
+                        </div>
+                    </div>
+
+
+                    <div class="dropdown no-arrow">
+                        <span class="mr-2 d-none d-lg-inline text-gray-900 small">Limiarização</span>
+                        <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                            <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-900"></i>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
+                            aria-labelledby="dropdownMenuLink">
+                            <a class="dropdown-item" href="#">Otsu</a>
+                            <a class="dropdown-item" href="#">Kittler</a>
+                            <a class="dropdown-item" href="#">Entropia</a>
+                            <a class="dropdown-item" href="#">Fuzzy Set</a>
+                            <a class="dropdown-item" href="#">Anistropia</a>
+                            <a class="dropdown-item" href="#">Manual</a>
+                        </div>
+                    </div>
+                    <div class="dropdown no-arrow">
+                        <span class="mr-2 d-none d-lg-inline text-gray-900 small">Morfologia</span>
+                        <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                            <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-900"></i>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
+                            aria-labelledby="dropdownMenuLink">
+                            <a class="dropdown-item" href="#">Abertura</a>
+                            <a class="dropdown-item" href="#">Fechamento</a>
+                            <a class="dropdown-item" href="#">Esqueletização</a>
+                            <a class="dropdown-item" href="#">Detecção de Bordas</a>
+                            <a class="dropdown-item" href="#">Erosão</a>
+                            <a class="dropdown-item" href="#">Dilatação</a>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- Card Body -->
+                <div class="card-body">
+                    <div class="chart-area">
+                        <div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Area Chart -->
+        <div class="col-xl-6 col-lg-5">
+            <div class="card shadow mb-4">
+                <!-- Card Header - Dropdown -->
+                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                    <h6 class="m-0 font-weight-bold text-primary">Imagem Resultante</h6>
+
+                    <ul class="navbar-nav ml-auto">
+                        <div class="topbar-divider d-none d-sm-block"></div>
+                    </ul>
+
+                    <div class="dropdown no-arrow">
+                        <span class="mr-2 d-none d-lg-inline text-gray-900 small">Arquivo</span>
+                        <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                            <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-900"></i>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
+                            aria-labelledby="dropdownMenuLink">
+                            <!-- <div class="dropdown-header">Opções da imagem:</div> -->
+                            <a class="dropdown-item" href="#">Baixar imagem</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card Body -->
+                <div class="card-body">
+                    <div class="chart-area">
+                        <div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Content Row -->
+        <div class="row">
+
+
+
+        </div>
+
+    </div>
+    <!-- /.container-fluid -->
+
+</div>
+
+{% endblock %}

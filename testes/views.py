@@ -8,8 +8,9 @@ from .models import Upload
 
 from django.urls import reverse_lazy
 
+
 class UploadCreate(CreateView):
     model = Upload
-    fields = ['arquivo']
+    fields = ['image']
     template_name = 'testes/upload.html'
     success_url = reverse_lazy('inicio')

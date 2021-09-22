@@ -40,7 +40,7 @@
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{% url 'inicio' %}">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{% url 'upload-imagem' %}">
                 <div class="sidebar-brand-icon rotate-n-15">
                     <i class="fas fa-laugh-wink"></i>
                 </div>
@@ -69,9 +69,8 @@
                 </a>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Opções da imagem:</h6>
-                        <a class="collapse-item" href="#">Inserir imagem</a>
-                        <a class="collapse-item" href="#">Desfazer alteração</a>
+                        <!-- <h6 class="collapse-header">Opções da imagem:</h6> -->
+                        <a class="collapse-item" href="{% url 'upload-imagem' %}">Inserir imagem</a>
                     </div>
                 </div>
             </li>
@@ -87,12 +86,8 @@
                 <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
                     data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Selecione uma função:</h6>
-                        <a class="collapse-item" href="#">função 1</a>
-                        <a class="collapse-item" href="#">função 2</a>
-                        <a class="collapse-item" href="#">função 3</a>
-                        <a class="collapse-item" href="#">função 4</a>
-                        <a class="collapse-item" href="#">função 5</a>
+                        <!-- <h6 class="collapse-header">Inserir nova função</h6> -->
+                        <a class="collapse-item" href="{% url 'cadastrar-script' %}">Inserir nova função</a>
                     </div>
                 </div>
             </li>
