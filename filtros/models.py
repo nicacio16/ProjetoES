@@ -5,11 +5,12 @@ from testes.models import Upload
 
 
 class Script(models.Model):
+    categoria = models.CharField(max_length=50)
     nome = models.CharField(max_length=50)
-    codigo = models.TextField(max_length=255, verbose_name="Código", help_text="Explicar como usar o código")
+    codigo = models.TextField(max_length=255, verbose_name="Código", help_text="Substitua o endereço da imagem no script por: $Imagem$")
 
     def __str__(self):
-        return "{}".format(self.nome)
+        return "{} - {}".format(self.categoria, self.nome)
 
     
 

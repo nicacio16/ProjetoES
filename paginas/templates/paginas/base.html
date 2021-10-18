@@ -40,11 +40,11 @@
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{% url 'upload-imagem' %}">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{% url 'script' %}">
                 <div class="sidebar-brand-icon rotate-n-15">
                     <i class="fas fa-laugh-wink"></i>
                 </div>
-                <div class="sidebar-brand-text mx-1"> <sup>Home</sup></div>
+                <div class="sidebar-brand-text mx-1">OpenPDI</div>
             </a>
 
             <!-- Divider -->
@@ -64,7 +64,7 @@
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
                     aria-expanded="true" aria-controls="collapseTwo">
-                    <i class="fas fa-fw fa-cog"></i>
+                    <i class="fas fa-fw fa-paperclip"></i>
                     <span>Imagem</span>
                 </a>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
@@ -75,12 +75,11 @@
                 </div>
             </li>
 
-
             <!-- Nav Item - Utilities Collapse Menu -->
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
                     aria-expanded="true" aria-controls="collapseUtilities">
-                    <i class="fas fa-fw fa-wrench"></i>
+                    <i class="fas fa-fw fa-edit"></i>
                     <span>Função</span>
                 </a>
                 <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
@@ -135,17 +134,16 @@
                     <ul class="navbar-nav ml-auto">
 
                         {% block contausuario %}
-                        <div class="topbar-divider d-none d-sm-block"></div>
-
+                        <!-- <div class="topbar-divider d-none d-sm-block"></div> -->
 
                         <!-- Nav Item - User Information -->
-                        <li class="nav-item dropdown no-arrow">
+                        <!-- <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <span class="mr-2 d-none d-lg-inline text-gray-600 small">Olá, Fulano</span>
                                 <img class="img-profile rounded-circle" src="{% static 'img/undraw_profile.svg' %}">
                             </a>
-                            <!-- Dropdown - User Information -->
+                            
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                 aria-labelledby="userDropdown">
                                 <a class="dropdown-item" href="#">
@@ -166,7 +164,7 @@
                                     Logout
                                 </a>
                             </div>
-                        </li>
+                        </li> -->
 
                     </ul>
                     {% endblock %}
@@ -182,10 +180,7 @@
                     <!-- Page Heading -->
                     {% block botaoadd %}
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <div class="custom-file">
-                            <input type="file" class="custom-file-input" id="customFile">
-                            <label class="custom-file-label" for="customFile">Escolher arquivo</label>
-                        </div>
+                       
                     </div>
 
                     {% endblock %}
@@ -206,26 +201,16 @@
                                 <!-- Card Header - Dropdown -->
                                 <div
                                     class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                    <h6 class="m-0 font-weight-bold text-primary">Visualização da Imagem</h6>
-                                    <div class="dropdown no-arrow">
-                                        <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
-                                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
-                                        </a>
-                                        <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
-                                            aria-labelledby="dropdownMenuLink">
-                                            <div class="dropdown-header">Opções da imagem:</div>
-                                            <a class="dropdown-item" href="#">Excluir imagem</a>
-                                            <div class="dropdown-divider"></div>
-                                            <a class="dropdown-item" href="#">Desfazer alteração</a>
-                                        </div>
-                                    </div>
+                                    <h6 class="m-0 font-weight-bold text-primary">Exemplo</h6>
+                                    
                                 </div>
                                 <!-- Card Body -->
                                 <div class="card-body">
                                     <div class="chart-area">
-                                        <div>
-
+                                        <div class="chart-area">
+                                            <div style="display:table-cell; vertical-align:middle; text-align:center">
+                                                <img src="/uploads/imagemExemploPDI.png" width=100%>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -238,7 +223,7 @@
                                 <!-- Card Header - Dropdown -->
                                 <div
                                     class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                    <h6 class="m-0 font-weight-bold text-primary">Funções</h6>
+                                    <h6 class="m-0 font-weight-bold text-primary">Resumo</h6>
                                     <div class="dropdown no-arrow">
                                         <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
                                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -249,70 +234,27 @@
                                             <div class="dropdown-header">Categoria 1:</div>
                                             <a class="dropdown-item" href="#">função A</a>
                                             <a class="dropdown-item" href="#">função B</a>
-                                            <div class="dropdown-divider"></div>
-                                            <div class="dropdown-header">Categoria 2:</div>
-                                            <a class="dropdown-item" href="#">função C</a>
-                                            <a class="dropdown-item" href="#">função D</a>
-                                            <div class="dropdown-divider"></div>
-                                            <div class="dropdown-header">Categoria 3:</div>
-                                            <a class="dropdown-item" href="#">função E</a>
-                                            <a class="dropdown-item" href="#">função F</a>
-                                            <a class="dropdown-item" href="#">função G</a>
-                                            <div class="dropdown-divider"></div>
                                         </div>
                                     </div>
                                 </div>
                                 <!-- Card Body -->
                                 <div class="card-body">
-                                    <div class="chart-pie pt-4 pb-2">
+                                    <div class="chart-pie pt-1">
                                         <!-- Color System -->
-                                        <div class="row">
-                                            <div class="col-lg-6 mb-4">
-                                                <div class="card bg-primary text-white shadow">
-                                                    <div class="card-body">
-                                                        Função 1
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-6 mb-4">
-                                                <div class="card bg-success text-white shadow">
-                                                    <div class="card-body">
-                                                        Função 2
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-6 mb-4">
-                                                <div class="card bg-info text-white shadow">
-                                                    <div class="card-body">
-                                                        Função 3
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-6 mb-4">
-                                                <div class="card bg-warning text-white shadow">
-                                                    <div class="card-body">
-                                                        Função 4
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-6 mb-4">
-                                                <div class="card bg-danger text-white shadow">
-                                                    <div class="card-body">
-                                                        Função 5
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-6 mb-4">
-                                                <div class="card bg-secondary text-white shadow">
-                                                    <div class="card-body">
-                                                        Função 6
-                                                    </div>
-                                                </div>
-                                            </div>
-
+                                        <div class="row mf-4">                                                
+                                            <p style="text-align: justify; font-size: small;">
+                                                Apesar do PDI se concentrar no processamento de imagens digitais, devemos lembrar
+                                                que a maioria das imagens digitais são, na realidade, nada mais do que uma 
+                                                discretização de imagens analógicas. Tipicamente, uma imagem é representada
+                                                por uma função em duas dimensões para imagens monocromáticas ou mais para
+                                                imagens coloridas ou multiespectrais. Por convenção, esta função é representada pela
+                                                função ),( yxf onde o eixo y é invertido como mostrado ao lado. Uma imagem digital 
+                                                é a discretização de uma cena ou de uma imagem em formato analógico (foto, sinal de
+                                                televisão ou de vídeo) e é geralmente representada através de uma matriz bidimensional
+                                                (ou com mais dimensões para imagens coloridas ou multiespectrais) de valores numéricos.
+                                            </p>                                 
                                         </div>
                                     </div>
-
                                 </div>
                             </div>
                         </div>

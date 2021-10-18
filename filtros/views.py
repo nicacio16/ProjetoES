@@ -13,10 +13,12 @@ from django.views.generic.detail import DetailView
 from django.conf import settings
 
 import os
+import math
+
 
 class ScriptCreate(CreateView):
     model = Script
-    fields = ['nome', 'codigo']
+    fields = ['categoria', 'nome', 'codigo']
     template_name = 'filtros/form.html'
     success_url = reverse_lazy('inicio')
 
@@ -30,9 +32,25 @@ class ScriptCreate(CreateView):
         return context
 
 
+class TesteCreate(CreateView):
+    model = Teste
+    fields = ['imagem', 'filtro']
+    template_name = 'filtros/form.html'
+    success_url = reverse_lazy('inicio')
+
+    def get_context_data(self, *args, **kwargs):
+
+        context = super().get_context_data(*args, **kwargs)
+
+        context['titulo'] = "Inserir Imagem"
+        context['botao'] = "Upload"
+
+        return context
+
+
 class ScriptUpdate(UpdateView):
     model = Script
-    fields = ['nome', 'codigo']
+    fields = ['categoria', 'nome', 'codigo']
     template_name = 'filtros/form.html'
     success_url = reverse_lazy('inicio')
 
@@ -41,6 +59,22 @@ class ScriptUpdate(UpdateView):
         context = super().get_context_data(*args, **kwargs)
 
         context['titulo'] = "Editar Filtro"
+        context['botao'] = "Atualizar"
+
+        return context
+
+
+class TesteUpdate(UpdateView):
+    model = Teste
+    fields = ['imagem', 'filtro']
+    template_name = 'filtros/form.html'
+    success_url = reverse_lazy('inicio')
+
+    def get_context_data(self, *args, **kwargs):
+
+        context = super().get_context_data(*args, **kwargs)
+
+        context['titulo'] = "Editar Imagem"
         context['botao'] = "Atualizar"
 
         return context
@@ -55,6 +89,7 @@ class TesteDetail(DetailView):
         context = super().get_context_data(*args, **kwargs)
 
         # Aqui que fazer aquele EXEC e aplicar os filtros
+        
 
         #pega o caminho completo do diretório atual
         dir_atual = settings.BASE_DIR
@@ -68,7 +103,9 @@ class TesteDetail(DetailView):
         codigo = codigo.replace('$imagem$', img.url)
         codigo = codigo.replace('$imagem_final$', os.path.join(dir_atual, 'uploads/resultado_imagem.jpg'))
 
-
+        #Imprimindo o código com o caminho da imagem
+        #context['resultado'] = codigo
+        
         context['resultado'] = dir_atual
         context['resultado_img'] = os.path.join(dir_atual, str(img)).replace('\\', '/')
 

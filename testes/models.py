@@ -23,23 +23,23 @@ class Upload(models.Model):
     def __str__(self):
         return f"[{self.pk}] {self.description}"
 
-    # def save(self, *args, **kwargs):
+    def save(self, *args, **kwargs):
 
-    #     # open image
-    #     pil_img = Image.open(self.image)
+         # open image
+         pil_img = Image.open(self.image)
 
-    #     # convert the image to array and do some processing
-    #     cv_img = np.array(pil_img)
-    #     img = get_filtered_image(cv_img, self.action)
+         # convert the image to array and do some processing
+         cv_img = np.array(pil_img)
+         img = get_filtered_image(cv_img, self.action)
 
-    #     # convert back to pil image
-    #     im_pil = Image.fromarray(img)
+         # convert back to pil image
+         im_pil = Image.fromarray(img)
 
-    #     # save
-    #     buffer = BytesIO()
-    #     im_pil.save(buffer, format='png')
-    #     image_png = buffer.getvalue()
+         # save
+         buffer = BytesIO()
+         im_pil.save(buffer, format='png')
+         image_png = buffer.getvalue()
 
-    #     self.image.save(str(self.image), ContentFile(image_png), save=False)
+         self.image.save(str(self.image), ContentFile(image_png), save=False)
 
-    #     super().save(*args, **kwargs)
+         super().save(*args, **kwargs)

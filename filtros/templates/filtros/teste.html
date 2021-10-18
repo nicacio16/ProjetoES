@@ -19,25 +19,38 @@
 
     <br>
     
+    <h5 class="">Testando EXEC():</h5>
+    
+    <br>
+    <img src="/uploads/{{ object.imagem.image }}" height="150" alt="">
+    
+    <br>
+
+    <br>
+    
     <h5 class="">Imagem Original:</h5>
     {{ object.imagem.image }}
     <br>
-    <img src="{{ object.imagem.image }}" alt="">
+    <img src="/uploads/{{ object.imagem.image }}" height="150" alt="">
 
     <br>
 
     <h5 class="mt-4">Script aplicado:</h5>
     {{ object.filtro.codigo|escape }}
+    <br>
 
     <hr>
 
     <h5>Imagem resultante</h5>
 
     {{ resultado }}
-
+    <br>   
+    <img src="/uploads/{{ object.imagem.resultado }}" height="150" alt="">
+    
     <hr>
-
-    <img src="{{ resultado_img }}" alt="">
+    {{ resultado_img }}
+    <br>
+    <img src="{{ resultado_img }}" height="150" alt="">
 
     
 </div>
