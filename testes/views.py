@@ -1,38 +1,21 @@
-# from typing import ClassVar
-# from django.db import models
-# from django.views.generic import TemplateView
 from django import forms
 from django.shortcuts import render,redirect
-# from django.http import HttpResponseRedirect
-# from django.views.generic.edit import CreateView
-# from django.http import FileResponse
 from django.http.response import HttpResponse
-# from django.template import RequestContext
-# from django.contrib import messages
 import re
-# from filtros.models import Teste
 from filtros.models import Script
 
 from .models import Image,Result
-# from .models import Upload
 
 from django.urls import reverse_lazy
 import cv2
 import mimetypes
 import os
 
-# class UploadCreate(CreateView):
-#     model = Upload
-#     fields = ['image']
-#     template_name = 'testes/upload.html'
-#     success_url = reverse_lazy('inicio')
 
 class ImageForm(forms.ModelForm):
     class Meta:
         model= Image
         fields= ["imagefile"]
-
-
 
 
 def historico():
@@ -46,6 +29,7 @@ def historico():
     response['Content-Disposition'] = "attachment; filename=%s" % 'historico.txt'
     os.remove(hist_path)
     return response
+
 
 
 def cont(context):
@@ -65,14 +49,12 @@ def cont(context):
 
 
 
-
 def save_result(scpt,url_out,pk):
     result = Result()
     result.imagefile.name = url_out[8:]
     result.code_name=scpt.nome
     result.code_pk=pk
     result.save()
-
 
 
 
@@ -87,7 +69,6 @@ def create_file(scpt,url_in,url_out):
 
 
 
-
 def last(url):
     if last:=Result.objects.last():
         return '/uploads'+last.imagefile.name
@@ -96,11 +77,8 @@ def last(url):
 
 
 
-
 def SKPT(pk):
     return Script.objects.filter(pk=pk)[0]
-
-
 
 
 
@@ -111,7 +89,6 @@ def get_form(request):
         Result.objects.all().delete()
         form.save()
         return redirect(request.META.get('HTTP_REFERER'))
-
 
 
 
